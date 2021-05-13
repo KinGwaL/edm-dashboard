@@ -87,11 +87,11 @@ class Dashboard extends Component {
     .then(response => response.json())
     .then(data => {
       const finalClickHistoryData = data.filter(e => {
-        if (e.clicks) return true;
+        if (e.transactions) return true;
         else return false;
       }).map(e => {
         const d = new Date(e.Day);
-        return {x:d.toLocaleDateString("en-US"),y:e.clicks} 
+        return {x:d.toLocaleDateString("en-US"),y:e.transactions} 
       })
       this.setState({
         clickHistory:finalClickHistoryData
