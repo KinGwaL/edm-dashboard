@@ -72,7 +72,7 @@ class Dashboard extends Component {
     .then(data => {
       this.setState({
         clickData:data.map(e=>{
-          let num = parseInt(e.sum);
+          let num = parseInt(e.count);
           if (isNaN(num)) { num=0 }
           return {x:num,y:e.foriegn_curry} 
         })
@@ -127,7 +127,7 @@ class Dashboard extends Component {
           </div>
         </div>
         <div className="flex-grid">
-        <div className="col">
+          <div className="col">
             <h2 className="title">Live Transaction Detail</h2>
             <p className="sub-title">streaming transaction data</p>
             <div className="chart-wrapper">

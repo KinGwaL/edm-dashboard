@@ -38,7 +38,7 @@ export default class AreaLineChart extends React.Component {
               <VerticalGridLines />
               <HorizontalGridLines />
               <XAxis title="Date" tickLabelAngle={-90}/>
-              <YAxis title="Clicks"/>
+              <YAxis title="Transactions"/>
               <VerticalBarSeries animation='gentle' data={this.props.clickHistory}/>
             </XYPlot>
           :
@@ -46,7 +46,7 @@ export default class AreaLineChart extends React.Component {
               <VerticalGridLines />
               <HorizontalGridLines />
               <XAxis title="Date" tickLabelAngle={-90} />
-              <YAxis title="Clicks"/>
+              <YAxis title="Transactions"/>
               <VerticalBarSeries animation='gentle' data={this.props.clickHistory}/>
             </FlexibleXYPlot>
         :
