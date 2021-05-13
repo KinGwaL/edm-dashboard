@@ -8,7 +8,7 @@ import {
 } from 'react-vis';
 
 import React from 'react';
-import { CLICK_KAFKA_TOPIC, PAGE_LOAD_KAFKA_TOPIC } from './kafka-topics.js';
+import { CLICK_KAFKA_TOPIC, PAGE_LOAD_KAFKA_TOPIC, GENERAL_TOPIC } from './kafka-topics.js';
 
 function getSeconds() {
   return Math.floor(new Date().getTime() / 1000);
