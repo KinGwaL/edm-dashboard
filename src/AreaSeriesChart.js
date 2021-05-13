@@ -65,6 +65,9 @@ export default class AreaSeriesChart extends React.Component {
         case PAGE_LOAD_KAFKA_TOPIC:
           this.addOneLoad(); 
           break;
+        case GENERAL_TOPIC:
+          this.addOneClick();
+          break;
       default:
         console.log("default switch")
         break;
