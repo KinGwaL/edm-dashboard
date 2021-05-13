@@ -5,8 +5,8 @@ if(process.env.NODE_ENV == "development") {
   defaultClickTopicName = 'edm-ui-click-local'
   defaultPageLoadTopicName = 'edm-ui-pageload-local'
 } else {
-  defaultClickTopicName = 'edm-ui-click'
-  defaultPageLoadTopicName = 'edm-ui-pageload'
+  defaultClickTopicName = 'citic-poc-transaction-request'
+  defaultPageLoadTopicName = 'citic-poc-transaction-response'
 }
 
 export const CLICK_KAFKA_TOPIC     = process.env.REACT_APP_CLICK_KAFKA_TOPIC || defaultClickTopicName;
