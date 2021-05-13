@@ -109,38 +109,38 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="dashboard">
-        <h1>EDM Dashboard</h1> 
+        <h1>Trsnaction Dashboard</h1> 
         <div className="flex-grid">
           <div className="col">
-            <h2 className="title">Button Clicks</h2>
-            <p className="sub-title">historical click data</p>
+            <h2 className="title">Transaction Detail</h2>
+            <p className="sub-title">historical transaction detail</p>
             <div className="chart-wrapper">
-              <PopularClicksChart title="Clicks" width={this.state.chartWidth} clickData={this.state.clickData}/>
+              <PopularClicksChart title="Transactions" width={this.state.chartWidth} clickData={this.state.clickData}/>
             </div>
           </div>
           <div className="col">
-            <h2 className="title">Live Button Clicks</h2>
-            <p className="sub-title">streaming click data</p>
-            <div className="chart-wrapper">
-              {
-                this.state.latestMessage ?
-                  <PopularClicksChart title="Clicks" width={this.state.chartWidth} latestMessage={this.state.latestMessage}/> 
-                : <p className="waiting">Waiting for data...</p>
-              }
-            </div>
-          </div>
-        </div>
-        <div className="flex-grid">
-          <div className="col">
-            <h2 className="title">Clicks Per Day</h2>
-            <p className="sub-title">historical click data</p>
+            <h2 className="title">Transaction Per Day</h2>
+            <p className="sub-title">historical transaction data</p>
             <div className="chart-wrapper">
               <ClicksByDayChart width={this.state.chartWidth} clickHistory={this.state.clickHistory}/>
             </div>
           </div>
+        </div>
+        <div className="flex-grid">
+        <div className="col">
+            <h2 className="title">Live Transaction Detail</h2>
+            <p className="sub-title">streaming transaction data</p>
+            <div className="chart-wrapper">
+              {
+                this.state.latestMessage ?
+                  <PopularClicksChart title="Transactions" width={this.state.chartWidth} latestMessage={this.state.latestMessage}/> 
+                : <p className="waiting">Waiting for data...</p>
+              }
+            </div>
+          </div>
           <div className="col">
-            <h2 className="title">Clicks Per Second</h2>
-            <p className="sub-title">streaming click data</p>
+            <h2 className="title">Transaction Per Second</h2>
+            <p className="sub-title">streaming transaction data</p>
             <div className="chart-wrapper">
               <AreaSeriesChart width={this.state.chartWidth} latestMessage={this.state.latestMessage}/>
             </div>
@@ -150,8 +150,8 @@ class Dashboard extends Component {
                 '#79c7e3'
               ]}
               items={[
-                'Button Clicks',
-                'Page Loads'
+                'Transaction Data',
+                'Active User'
               ]}
               orientation="horizontal"
             />
