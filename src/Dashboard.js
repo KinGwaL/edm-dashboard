@@ -74,7 +74,7 @@ class Dashboard extends Component {
         clickData:data.map(e=>{
           let num = parseInt(e.sum);
           if (isNaN(num)) { num=0 }
-          return {x:num,y:e.button_id} 
+          return {x:num,y:e.foriegn_curry} 
         })
       });
     })

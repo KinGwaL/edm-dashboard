@@ -26,7 +26,7 @@ export default class PopularClicksChart extends React.Component {
       const json = JSON.parse(newProps.latestMessage);
       switch (json.topic) {
         case CLICK_KAFKA_TOPIC:
-          const buttonId = json.properties.button_id;
+          const buttonId = json.properties.foriegn_curry;
           const e = this.state.data.find((element) => {
             return element.y === buttonId;
           });
@@ -34,7 +34,7 @@ export default class PopularClicksChart extends React.Component {
             // create data
             // color:getColor(this.state.data.length + 1)
             this.setState({
-              data:this.state.data.concat({x: 1, y: json.properties.button_id})
+              data:this.state.data.concat({x: 1, y: json.properties.foriegn_curry})
             });
             break;
           }else {
