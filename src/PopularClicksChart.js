@@ -26,6 +26,7 @@ export default class PopularClicksChart extends React.Component {
       const json = JSON.parse(newProps.latestMessage);
       switch (json.topic) {
         case CLICK_KAFKA_TOPIC:
+        case PAGE_LOAD_KAFKA_TOPIC: 
           const buttonId = json.properties.foriegn_curry;
           const e = this.state.data.find((element) => {
             return element.y === buttonId;
@@ -42,8 +43,6 @@ export default class PopularClicksChart extends React.Component {
             e.x++;
             break;
           }
-      case PAGE_LOAD_KAFKA_TOPIC: 
-          break;
       default:
         console.log("default switch")
         break;
