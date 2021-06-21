@@ -9,7 +9,7 @@ import {
 }from 'react-vis';
 
 import React from 'react';
-import { CLICK_KAFKA_TOPIC, PAGE_LOAD_KAFKA_TOPIC } from './kafka-topics.js';
+import { CLICK_KAFKA_TOPIC, PAGE_LOAD_KAFKA_TOPIC,DIRECT_ACTION_TOPIC } from './kafka-topics.js';
 
 const FlexibleXYPlot = makeWidthFlexible(XYPlot); 
 
@@ -25,6 +25,7 @@ export default class PopularClicksChart extends React.Component {
     if(newProps.latestMessage) {
       const json = JSON.parse(newProps.latestMessage);
       switch (json.topic) {
+        case DIRECT_ACTION_TOPIC:
         case CLICK_KAFKA_TOPIC:
         case PAGE_LOAD_KAFKA_TOPIC: 
           const buttonId = json.properties.Request.ForeignCurry;

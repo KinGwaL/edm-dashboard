@@ -8,7 +8,7 @@ import {
 } from 'react-vis';
 
 import React from 'react';
-import { CLICK_KAFKA_TOPIC, PAGE_LOAD_KAFKA_TOPIC, GENERAL_TOPIC } from './kafka-topics.js';
+import { CLICK_KAFKA_TOPIC, PAGE_LOAD_KAFKA_TOPIC, GENERAL_TOPIC, DIRECT_ACTION_TOPIC } from './kafka-topics.js';
 
 function getSeconds() {
   return Math.floor(new Date().getTime() / 1000);
@@ -64,6 +64,9 @@ export default class AreaSeriesChart extends React.Component {
           break;
         case PAGE_LOAD_KAFKA_TOPIC:
           this.addOneLoad(); 
+          break;
+        case DIRECT_ACTION_TOPIC:
+          this.addOneLoad();
           break;
         case GENERAL_TOPIC:
           this.addOneClick();
